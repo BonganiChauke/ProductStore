@@ -11,6 +11,25 @@
         <h4 class="mb-5"> New product </h4>
         <hr />
 
+        <!-- message alert to the user -->
+        @if (Model.errorMessage.Length > 0)
+        {
+            // if there is an error
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>@Model.errorMessage</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+        }
+        else if (Model.successMessage.Length > 0)
+        {
+            // if there is no error
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>@Model.successMessage</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
         <form method="post" enctype="multipart/form-data">
 
             <!-- product name -->
@@ -36,11 +55,11 @@
                 <label class="col-sm-4 col-form-label">Category</label>
                 <div class="col-sm-8">
                     <select class="form-select" asp-for="productDetail.Category">
-                       <option value="Phones">Phones</option>
-                       <option value="Computers">Computers</option>
-                       <option value="Accessories">Accessories</option>
-                       <option value="Printers">Printers</option>
-                       <option value="Cameras">Cameras</option>
+                        <option value="Phones">Phones</option>
+                        <option value="Computers">Computers</option>
+                        <option value="Accessories">Accessories</option>
+                        <option value="Printers">Printers</option>
+                        <option value="Cameras">Cameras</option>
                         <option value="Other">Other</option>
                     </select>
                 </div>
