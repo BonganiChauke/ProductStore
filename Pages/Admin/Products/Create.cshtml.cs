@@ -73,6 +73,7 @@ namespace ProductStore.Pages.Admin.Products
                 Name = productDetail.Name,
                 Brand = productDetail.Brand,
                 Price = productDetail.Price,
+                Category = productDetail.Category,
                 Description = productDetail.Description ?? "",
                 ImageFileName = fileName,
                 CreatedAt = DateTime.Now
