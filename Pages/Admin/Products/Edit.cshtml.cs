@@ -93,12 +93,12 @@ namespace ProductStore.Pages.Admin.Products
             string newFileName = product.ImageFileName;
 
             //if image file is not null
-            if(Product.ImageFileName != null)
+            if(productDetail.ImageFile != null)
             {
-                string fileName = DateTime.Now.ToString("yyyyMMddHHmmssfff");
-                fileName = Path.GetExtension(productDetail.ImageFile!.FileName);
+                newFileName = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+                newFileName = Path.GetExtension(productDetail.ImageFile!.FileName);
 
-                string imageFullPath = environment.WebRootPath + "/products/" + fileName;
+                string imageFullPath = environment.WebRootPath + "/products/" + newFileName;
 
                 //creating a file to save the server of the new image
                 using (var stream = System.IO.File.Create(imageFullPath))
@@ -108,7 +108,7 @@ namespace ProductStore.Pages.Admin.Products
                 }
 
                 // delete the old image
-                string oldImageFullPath = environment.WebRootPath + "/products/" + fileName;
+                string oldImageFullPath = environment.WebRootPath + "/products/" + product.ImageFileName;
                 System.IO.File.Delete(oldImageFullPath);
             }
 
