@@ -56,7 +56,7 @@ namespace ProductStore.Pages.Admin.Products
             fileName = Path.GetExtension(productDetail.ImageFile!.FileName);
 
             //path of the image
-            string imageFullPath = environment.WebRootPath + "/products/" + fileName;
+            string imageFullPath = environment.WebRootPath + "/products/" + productDetail.ImageFile;
 
             //creating a file to save the server of the new image
             using (var stream = System.IO.File.Create(imageFullPath))
@@ -85,7 +85,7 @@ namespace ProductStore.Pages.Admin.Products
 
             //clear the form
             productDetail.Name = "";
-            productDetail.Brand = "";
+            productDetail.Brand = ""; 
             productDetail.Category = "";
             productDetail.Description = "";
             productDetail.Price = 0;
