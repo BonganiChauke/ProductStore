@@ -52,11 +52,11 @@ namespace ProductStore.Pages.Admin.Products
             }
 
             // save the image
-            string fileName = DateTime.Now.ToString("yyyyMMddHHmmssfff");
-            fileName = Path.GetExtension(productDetail.ImageFile!.FileName);
+            string fileName = DateTime.Now.ToString("yyyyMMddHHmmssfff") + Path.GetExtension(productDetail.ImageFile!.FileName);
+
 
             //path of the image
-            string imageFullPath = environment.WebRootPath + "/products/" + productDetail.ImageFile;
+            string imageFullPath = environment.WebRootPath + "/products/" + fileName;
 
             //creating a file to save the server of the new image
             using (var stream = System.IO.File.Create(imageFullPath))
