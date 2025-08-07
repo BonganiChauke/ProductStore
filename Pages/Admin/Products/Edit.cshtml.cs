@@ -59,7 +59,7 @@ namespace ProductStore.Pages.Admin.Products
         }
 
         //on post function to send to database
-        public void onPost(int? id)
+        public void OnPost(int? id)
         {
             // if the id is null
             if (id == null)
@@ -95,9 +95,8 @@ namespace ProductStore.Pages.Admin.Products
             //if image file is not null
             if(productDetail.ImageFile != null)
             {
-                newFileName = DateTime.Now.ToString("yyyyMMddHHmmssfff");
-                newFileName = Path.GetExtension(productDetail.ImageFile!.FileName);
-
+                newFileName = DateTime.Now.ToString("yyyyMMddHHmmssfff") + Path.GetExtension(productDetail.ImageFile!.FileName);
+                
                 string imageFullPath = environment.WebRootPath + "/products/" + newFileName;
 
                 //creating a file to save the server of the new image
@@ -108,8 +107,11 @@ namespace ProductStore.Pages.Admin.Products
                 }
 
                 // delete the old image
-                string oldImageFullPath = environment.WebRootPath + "/products/" + product.ImageFileName;
-                System.IO.File.Delete(oldImageFullPath);
+                string oldImageFullPath = Path.Combine(environment.WebRootPath, "/products/", product.ImageFileName);
+                if (System.IO.File.Exists(oldImageFullPath))
+                {
+                    System.IO.File.Delete(oldImageFullPath);
+                }
             }
 
             //updating the product in the database
