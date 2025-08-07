@@ -24,3 +24,29 @@ body {
 textarea{
     resize: none;
 }
+
+.hero {
+    background: linear-gradient(to right, #007bff, #0056b3);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+    .hero h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .hero p {
+        font-size: 1.25rem;
+    }
+
+.features {
+    padding: 60px 0;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+}
