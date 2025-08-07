@@ -1,10 +1,35 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home ";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Welcome to ProductStore </h1>
+        <p>Manage products, categories, and more — all in one place.</p>
+        <a href="/Admin/Products/Index" class="btn btn-light btn-lg me-2">Go to Dashboard</a>
+        <a href="/Admin/Products/Create" class="btn btn-outline-light btn-lg">Add New Product</a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <h4>Product Management</h4>
+                <p>Easily add, edit, and remove products from your catalog.</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h4>Secure Admin Access</h4>
+                <p>Only authorized admins can make changes to your store.</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h4>Fully Responsive</h4>
+                <p>Manage your store from any device with mobile-friendly design.</p>
+            </div>
+        </div>
+    </div>
+</section>
