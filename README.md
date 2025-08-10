@@ -1,5 +1,8 @@
 # Product Store Web Application
 
+## Background
+- This is a web application built to apply CRUD (Create, Read, Update, Delete) for product store using ASP .Net Core and storing into local server using Server Management Studio.
+
 ## Setup Guide
 
 ### 1. Prerequisites
